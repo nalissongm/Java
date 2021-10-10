@@ -5,7 +5,7 @@ package br.edu.ifce.poo.empresa;
  *
  */
 
-public class Aplication {
+public class Main {
 	static int id = 0;
 	public static void main(String[] args, Funcionario[][] Funcionario) {
 	/*-------------------------------------------------------------
@@ -32,7 +32,7 @@ public class Aplication {
 		Dependente d1_f1 = new Dependente();
 		d1_f1.cpfDependente = "677.676.390-96";
 		
-		Dependente d2_f1 = new Dependente("283.918.270-03");
+		Dependente d2_f1 = new Dependente();
 		d2_f1.cpfDependente = "283.918.270-03";
 		
 		f1.listaDependentes = new Dependente[2];
