@@ -11,19 +11,22 @@ public class Funcionario {
 	Dependente[] listaDependentes;
 	
 	void ImprimirDados() {
-		String dependentes = "";
+		String dependentes = "| Dependentes do funcionário:\n";
 		
 		for(int i = 0; i < this.listaDependentes.length; i++) {
-			dependentes+="Dependente " +(i+1)+ ": " + this.listaDependentes[i].cpfDependente + "\n";
+			dependentes+= (i !=  this.listaDependentes.length - 1) ?
+					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].cpfDependente + "\n" :
+					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].cpfDependente;
 		}
 		
 		System.out.println(
-				"Nome: " + this.nome + "\n" +
-				"Código do funcionário: " + this.codMatricula + "\n" +
-				"CPF: " + this.cpf + "\n" +
-				"Telefone: " + this.telefone + "\n" +
-				"Salario: " + this.salario + "\n" +
-				dependentes + "\n"
+				"| Nome: " + this.nome + "\n" +
+				"| Código do funcionário: " + this.codMatricula + "\n" +
+				"| CPF: " + this.cpf + "\n" +
+				"| Telefone: " + this.telefone + "\n" +
+				"| Salario: " + this.salario + "\n" +
+				"| \n" +
+				dependentes
 				);
 
 	}

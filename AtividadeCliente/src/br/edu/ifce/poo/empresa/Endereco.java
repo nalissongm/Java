@@ -8,10 +8,10 @@ public class Endereco {
 	
 	void ImprimirDados() {
 		System.out.println(
-				"CEP: " + this.cep + "\n" +
-				"Bairro: " + this.bairro + "\n" +
-				"Logradouro: " + this.logradouro + "\n" +
-				"Nº: " + this.numero
-				);
+				"| Endereço do funcionário:" + "\n" +
+				"| CEP: " + this.cep + "\n" +
+				"| Bairro: " + this.bairro + "\n" +
+				"| Logradouro: " + this.logradouro + "\n" +
+				"| Nº: " + this.numero);
 	}
 }

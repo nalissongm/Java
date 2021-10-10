@@ -7,7 +7,7 @@ package br.edu.ifce.poo.empresa;
 
 public class Main {
 	static int id = 0;
-	public static void main(String[] args, Funcionario[][] Funcionario) {
+	public static void main(String[] args) {
 	/*-------------------------------------------------------------
 	 |	Criando funcionário - 01
 	 |-------------------------------------------------------------
@@ -93,10 +93,37 @@ public class Main {
 		s1.listaFuncionarios[1] = f2;
 	
 	/**
-	 * Executando códigos
+	 * Exibindo informações
 	 */
 		
-		
+		System.out.println(
+				"/--------------------------------------\n" +
+				"| Setor - " + s1.nomeSetor + "\n" + 
+				"|--------------------------------------\n" +
+				"| \n" +
+				"| > Funcionário 01: \n" +
+				"|"
+				);
+		s1.listaFuncionarios[0].ImprimirDados();
+		System.out.println(
+				"|"
+				);
+		s1.listaFuncionarios[0].residencia.ImprimirDados();
+		System.out.println(
+				"| \n" +
+				"| > Funcionário 02:\n" +
+				"|"
+				);
+		s1.listaFuncionarios[1].ImprimirDados();
+		System.out.println(
+				"|"
+				);
+		s1.listaFuncionarios[1].residencia.ImprimirDados();
+		System.out.println(
+				"|-----------------------------------------\n"+
+				"| SOMA TOTAL - SALÁRIOS: R$" + String.format("%.02f",s1.calcularFolha()) + "\n" +
+				"\\----------------------------------------"
+				);
 	}
 	
 	/**
