@@ -18,10 +18,10 @@ public class Main {
 		f1.nome = "Sérgio Iago da Rosa";
 		f1.codMatricula = geraId();
 		f1.cpf = "377.176.852-72";
-		f1.telefone = "(92) 98201-6270";
+		f1.telefone = "(88) 98663-7885";
 		f1.salario = 2530.00;
 		
-		// Informações residenciais
+		// Informações residenciais 
 		f1.residencia = new Endereco();
 		f1.residencia.logradouro = "Rua Antônio Serudo Martins";
 		f1.residencia.numero = 980;
@@ -92,6 +92,14 @@ public class Main {
 		s1.listaFuncionarios[0] = f1;
 		s1.listaFuncionarios[1] = f2;
 	
+		
+	/**
+	 * Executando alterações
+	 */
+		// Alterando o telefone de funcionário 01
+		f1.atualizarTelefone("(92) 98201-6270");
+		
+		
 	/**
 	 * Exibindo informações
 	 */
