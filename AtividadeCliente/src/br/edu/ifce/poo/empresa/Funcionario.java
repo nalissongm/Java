@@ -10,6 +10,12 @@ public class Funcionario {
 	// Lista de dependentes
 	Dependente[] listaDependentes;
 	
+	static int id = 0;
+	Funcionario(){
+		this.codMatricula = geraId();
+		this.salario = 1100.00;
+	}
+	
 	void ImprimirDados() {
 		String dependentes = "| Dependentes do funcionário:\n";
 		
@@ -33,5 +39,14 @@ public class Funcionario {
 	
 	void atualizarTelefone(String telefone)  {
 		this.telefone = telefone;
+	}
+	
+	/**
+	 * Cria id incremental
+	 * @return int id
+	 */
+	static int geraId() {
+		id++;
+		return id;
 	}
 }

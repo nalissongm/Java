@@ -4,6 +4,9 @@ public class Setor {
 	String nomeSetor;
 	Funcionario[] listaFuncionarios;
 	
+	Setor(){
+		this.nomeSetor = "Cargo Padrão";
+	}
 
 	double calcularFolha() {
 		double somaSalario = 0.0;
