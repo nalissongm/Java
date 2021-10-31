@@ -1,19 +1,39 @@
 package br.edu.ifce.poo.empresa;
 
 public class Setor {
-	String nomeSetor;
-	Funcionario[] listaFuncionarios;
-	
-	Setor(){
+	private String nomeSetor;
+	private Funcionario[] listaFuncionarios;
+
+	public Setor(){
 		this.nomeSetor = "Cargo Padrão";
 	}
+	
+	public Setor(String nomeSetor, Funcionario[] listaFuncionarios) {
+		this.nomeSetor = nomeSetor;
+		this.listaFuncionarios = listaFuncionarios;
+	}
 
-	double calcularFolha() {
+	public double calcularFolha() {
 		double somaSalario = 0.0;
 		for(int i = 0; i < this.listaFuncionarios.length; i++) {
-			somaSalario+= this.listaFuncionarios[i].salario;
+			somaSalario+= this.listaFuncionarios[i].getSalario();
 		}
 		return somaSalario;
+	}
+	
+	// Getters e Setters
+	public void setNomeSetor(String nomeSetor) {
+		this.nomeSetor = nomeSetor;
+	}
+	public String getNomeSetor() {
+		return nomeSetor;
+	}
+	
+	public void setListaFuncionarios(Funcionario[] listaFuncionarios) {
+		this.listaFuncionarios = listaFuncionarios;
+	}
+	public Funcionario[] getListaFuncionarios() {
+		return listaFuncionarios;
 	}
 	
 }

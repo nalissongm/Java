@@ -1,28 +1,60 @@
 package br.edu.ifce.poo.empresa;
 
 public class Funcionario {
-	String nome,cpf,telefone;
-	int codMatricula;
-	double salario;
+	private String nome;
+	private String cpf;
+	private String telefone;
+	private int codMatricula;
+	private double salario;
 	
 	// Informações residenciais
-	Endereco residencia;
+	private Endereco residencia;
 	// Lista de dependentes
-	Dependente[] listaDependentes;
+	private Dependente[] listaDependentes;
 	
-	static int id = 0;
-	Funcionario(){
+	private static int id = 0;
+	
+	/**
+	 * Construtor padrão
+	 * 	- Gera id autromáticamente
+	 * 	- Salário padrão de 1100.00
+	 */
+	public Funcionario(){
 		this.codMatricula = geraId();
 		this.salario = 1100.00;
 	}
 	
-	void ImprimirDados() {
+	/**
+	 * Construtor especial
+	 * @param nome
+	 * @param cpf
+	 * @param telefone
+	 * @param codMatricula
+	 * @param salario
+	 * @param residencia
+	 * @param listaDependentes
+	 */
+	public Funcionario(String nome, String cpf, String telefone, int codMatricula, double salario, Endereco residencia, Dependente[] listaDependentes) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.codMatricula = codMatricula;
+		this.salario = salario;
+		this.residencia = residencia;
+		this.listaDependentes = listaDependentes;
+	}
+	
+	
+	/**
+	 * Método para imprimir dados
+	 */
+	public void ImprimirDados() {
 		String dependentes = "| Dependentes do funcionário:\n";
 		
 		for(int i = 0; i < this.listaDependentes.length; i++) {
 			dependentes+= (i !=  this.listaDependentes.length - 1) ?
-					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].cpfDependente + "\n" :
-					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].cpfDependente;
+					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].getCpfDependente() + "\n" :
+					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].getCpfDependente();
 		}
 		
 		System.out.println(
@@ -37,15 +69,69 @@ public class Funcionario {
 
 	}
 	
-	void atualizarTelefone(String telefone)  {
+	/**
+	 * Método para atualizar o telefone do funcionário
+	 * @param telefone
+	 */
+	public void atualizarTelefone(String telefone)  {
 		this.telefone = telefone;
+	}
+	
+	// Getters e Setters
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	
+	public void setCodMatricula(int codMatricula) {
+		this.codMatricula = codMatricula;
+	}
+	public int getCodMatricula() {
+		 return codMatricula;
+	}
+	
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+	public double getSalario() {
+		return salario;
+	}
+	
+	public void setEndereco(Endereco residencia) {
+		this.residencia = residencia;
+	}
+	public Endereco getEndereco() {
+		return residencia;
+	}
+	
+	public void setDependente(Dependente[] listaDependentes) {
+		this.listaDependentes = listaDependentes;
+	}
+	public Dependente[] getDependente() {
+		return listaDependentes;
 	}
 	
 	/**
 	 * Cria id incremental
 	 * @return int id
 	 */
-	static int geraId() {
+	protected static int geraId() {
 		id++;
 		return id;
 	}
