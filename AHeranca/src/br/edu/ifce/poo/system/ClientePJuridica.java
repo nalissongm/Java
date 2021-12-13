@@ -1,8 +1,16 @@
 package br.edu.ifce.poo.system;
 
 public class ClientePJuridica extends Cliente{
-	@SuppressWarnings("unused")
 	private String cnpj;
+	
+	public ClientePJuridica() {
+		super();
+	}
+	
+	public ClientePJuridica(NotaFiscal[] listaNotas, String cnpj) {
+		super(listaNotas);
+		this.cnpj = cnpj;
+	}
 	
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;

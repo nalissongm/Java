@@ -1,18 +1,22 @@
 package br.edu.ifce.poo.system;
 
-public class ItemComprado extends Cliente{
-	@SuppressWarnings("unused")
+public class ItemComprado{
 	private String descricao;
-	@SuppressWarnings("unused")
 	private double preco;
-	@SuppressWarnings("unused")
 	private int quantidade;
 	
-	@SuppressWarnings("unused")
-	private ItemComprado[] listaItens;
+	ItemComprado(){
+		System.out.println("Novo item comprado");
+	};
+	
+	ItemComprado(String descricao,double preco,int quantidade){
+		this.descricao = descricao;
+		this.preco = preco;
+		this.quantidade = quantidade;
+	};
 	
 	/**
-	 * 
+	 * Retorna valor total do item comprado
 	 * @return
 	 */
 	public double valor() {
@@ -20,11 +24,15 @@ public class ItemComprado extends Cliente{
 		return valor;
 	}
 	
+	/*----------------------------------------------
+	 | Métodos Getters e Setters
+	 |----------------------------------------------
+	*/
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	public String getDescricao(String descricao) {
+	public String getDescricao() {
 		return this.descricao;
 	}
 	
@@ -32,7 +40,7 @@ public class ItemComprado extends Cliente{
 		this.preco = preco;
 	}
 	
-	public double getPreco(double preco) {
+	public double getPreco() {
 		return this.preco;
 	}
 	
@@ -40,7 +48,7 @@ public class ItemComprado extends Cliente{
 		this.quantidade = quantidade;
 	}
 	
-	public int getQuantidade(int quantidade) {
+	public int getQuantidade() {
 		return this.quantidade;
 	}
 }
