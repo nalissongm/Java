@@ -1,0 +1,105 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "br.edu.ifce.poo.empresa.Main",
+      "projectName": "AtividadeCliente"
+    },
+    {
+      "type": "java",
+      "name": "Launch Calculadora",
+      "request": "launch",
+      "mainClass": "CalculaNET/CalculaNET.Calculadora",
+      "projectName": "CalculaNET"
+    },
+    {
+      "type": "java",
+      "name": "Launch MainCalculadora",
+      "request": "launch",
+      "mainClass": "CalculaNET/CalculaNET.MainCalculadora",
+      "projectName": "CalculaNET"
+    },
+    {
+      "type": "java",
+      "name": "Launch AAQ1",
+      "request": "launch",
+      "mainClass": "AAQ1",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch AAQ2",
+      "request": "launch",
+      "mainClass": "AAQ2",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch AAQ4",
+      "request": "launch",
+      "mainClass": "AAQ4",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch AAQ5",
+      "request": "launch",
+      "mainClass": "AAQ5",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch L003Q5",
+      "request": "launch",
+      "mainClass": "L003Q5",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch L003Q6",
+      "request": "launch",
+      "mainClass": "L003Q6.L003Q6",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch MainAplicacao",
+      "request": "launch",
+      "mainClass": "TesteClassJV.MainAplicacao",
+      "projectName": "ExeciciosPOO"
+    },
+    {
+      "type": "java",
+      "name": "Launch Programa",
+      "request": "launch",
+      "mainClass": "edu.poo.academia.Programa",
+      "projectName": "ProjetoAcademia"
+    },
+    {
+      "type": "java",
+      "name": "Launch URI1035",
+      "request": "launch",
+      "mainClass": "QuestionsURIOnline/URI1035.URI1035",
+      "projectName": "QuestionsURIOnline"
+    },
+    {
+      "type": "java",
+      "name": "Launch ClasstTest2",
+      "request": "launch",
+      "mainClass": "Teste/tests.ClasstTest2",
+      "projectName": "Teste"
+    }
+  ]
+}
