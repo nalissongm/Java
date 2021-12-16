@@ -34,37 +34,35 @@ public class Funcionario {
 	 * @param residencia
 	 * @param listaDependentes
 	 */
-	public Funcionario(String nome, String cpf, String telefone, int codMatricula, double salario, Endereco residencia, Dependente[] listaDependentes) {
+	public Funcionario(String nome, String cpf, String telefone, int codMatricula, double salario, Endereco residencia) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.codMatricula = codMatricula;
 		this.salario = salario;
 		this.residencia = residencia;
-		this.listaDependentes = listaDependentes;
 	}
 	
 	
 	/**
 	 * Método para imprimir dados
 	 */
-	public void ImprimirDados() {
-		String dependentes = "| Dependentes do funcionário:\n";
+	public void imprimirDados() {
+		/*String dependentes = "| Dependentes do funcionário:\n";
 		
 		for(int i = 0; i < this.listaDependentes.length; i++) {
 			dependentes+= (i !=  this.listaDependentes.length - 1) ?
 					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].getCpfDependente() + "\n" :
 					"| " + (i+1)+ " - CPF: " + this.listaDependentes[i].getCpfDependente();
-		}
+		}*/
 		
 		System.out.println(
 				"| Nome: " + this.nome + "\n" +
 				"| Código do funcionário: " + this.codMatricula + "\n" +
 				"| CPF: " + this.cpf + "\n" +
 				"| Telefone: " + this.telefone + "\n" +
-				"| Salario: " + this.salario + "\n" +
-				"| \n" +
-				dependentes
+				"| Salario: " + this.salario
+				//dependentes
 				);
 
 	}

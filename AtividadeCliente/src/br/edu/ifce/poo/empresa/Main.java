@@ -89,7 +89,7 @@ public class Main {
 				"| > Funcionário 01: \n" +
 				"|"
 				);
-		s1.getListaFuncionarios()[0].ImprimirDados();
+		s1.getListaFuncionarios()[0].imprimirDados();
 		System.out.println(
 				"|"
 				);
@@ -99,7 +99,7 @@ public class Main {
 				"| > Funcionário 02:\n" +
 				"|"
 				);
-		s1.getListaFuncionarios()[1].ImprimirDados();
+		s1.getListaFuncionarios()[1].imprimirDados();
 		System.out.println(
 				"|"
 				);
