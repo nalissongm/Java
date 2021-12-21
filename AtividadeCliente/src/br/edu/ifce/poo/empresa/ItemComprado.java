@@ -24,6 +24,15 @@ public class ItemComprado{
 		return valor;
 	}
 	
+	public String toString() {
+		String text = "";
+		text += " Descrição do item: " + getDescricao() + ";\n";
+		text += " Preço do item: " + getPreco() + ";\n";
+		text += " Quantidade: " + getQuantidade() + ";\n";
+		text += " Valor total: " + valor() + ";\n";
+		return text;
+	}
+	
 	/*----------------------------------------------
 	 | Métodos Getters e Setters
 	 |----------------------------------------------

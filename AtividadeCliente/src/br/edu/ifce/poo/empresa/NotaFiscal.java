@@ -3,8 +3,8 @@ package br.edu.ifce.poo.empresa;
 public class NotaFiscal {
 	private String cpfCliente;
 	private ItemComprado[] listaItens;
-	public NotaFiscal() {
-		
+
+	public NotaFiscal() {	
 	}
 	
 	public NotaFiscal(String cpfCliente, ItemComprado[] listaItens) {
@@ -19,7 +19,19 @@ public class NotaFiscal {
 		}
 		return total;
 	}
-
+	
+	public String toString() {
+		String text = "";
+		text += "CPF do cliente: " + getCpfCliente() + ";\n";
+		text += "Itens comprados: " + "[\n";
+		for(ItemComprado l: listaItens) {
+			text +=  l + ",\n";
+		}
+		text += "];\n";
+		text += "Valor total: " + valorTotal() + ";\n";
+		return text;
+	}
+	
 	public String getCpfCliente() {
 		return cpfCliente;
 	}
@@ -29,7 +41,7 @@ public class NotaFiscal {
 	}
 
 	public ItemComprado[] getListaItens() {
-		return listaItens;
+		return this.listaItens;
 	}
 
 	public void setListaItens(ItemComprado[] listaItens) {

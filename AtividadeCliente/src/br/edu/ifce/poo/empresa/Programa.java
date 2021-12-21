@@ -44,7 +44,7 @@ public class Programa {
 		
 		// Venda 02
 		ItemComprado ic1 = new ItemComprado("Teclado Mecânico",458.00,1);
-		ItemComprado ic2 = new ItemComprado("Mouse Redragon",128.00,1);
+		ItemComprado ic2 = new ItemComprado("Mouse Redragon",128.00,2);
 		NotaFiscal nf1 = new NotaFiscal("659.844.547-50",new ItemComprado[] {ic1,ic2});
 		
 		v01.realizarVenda(nf1);
@@ -72,6 +72,7 @@ public class Programa {
 		
 		System.out.println("O total gasto em pagamento: " + gp.calcSalarioTotal()); 
 		//-> O total gasto em pagamento: 12875.939000000002
+		
 	}
 	
 	
