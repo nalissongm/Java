@@ -1,2 +1,2 @@
 ## Print do console
-![alt text](FormasGeometricas/assets/AAInterfaces_console.png)
+![alt text](https://raw.githubusercontent.com/nalissongm/Java/master/FormasGeometricas/assets/AAInterfaces_console.png)
