@@ -1,5 +1,5 @@
 package br.edu.ifce.poo.formas.model;
 
 public class Circulo {
-	double raio;
+	private double raio;
 }
