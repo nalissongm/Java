@@ -5,11 +5,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ficha.academy.model.AlunoModel;
-import edu.ficha.academy.repository.AlunoRepository;
+import edu.ficha.academy.service.AlunoService;
 
 
 
@@ -18,11 +21,23 @@ import edu.ficha.academy.repository.AlunoRepository;
 public class AlunoController {
 	
 	@Autowired
-	AlunoRepository repository;
+	AlunoService alunoService;
 	
-	@GetMapping("/retornar")
+	
+	@PostMapping("/salvar")
+	public void salvarAluno(@RequestBody AlunoModel aluno) {
+		alunoService.salvarAluno(aluno);
+	}
+	
+	@GetMapping("/{nome}")
+	public AlunoModel retornarAluno(@PathVariable("nome") String nome) {
+		return alunoService.retornarAlunoPeloNome(nome);
+	}
+
+	@GetMapping("/lista")
 	public List<AlunoModel> retornarAlunos(){
-		return repository.findAll();
+		return alunoService.retornarListaAlunos();
+		
 	}
 	
 }
