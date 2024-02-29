@@ -10,6 +10,10 @@ import edu.ficha.academy.model.AlunoModel;
 @Repository
 public interface AlunoRepository extends JpaRepository<AlunoModel, Integer> {
 
+	public AlunoModel findByNome(String nome);
+	
+	public AlunoModel findByMatricula(int id);
+	
 
 
 }

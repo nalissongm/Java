@@ -1,10 +1,13 @@
 package edu.ficha.academy.model;
 
 
+
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -15,8 +18,8 @@ public class AlunoModel {
 	
 	
 	@Id
-	@Column
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer matricula;
 	@Column
 	private String nome;
 	@Column
@@ -30,11 +33,11 @@ public class AlunoModel {
 	
 	
 	
-	public Integer getId() {
-		return id;
+	public Integer getMatricula() {
+		return matricula;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer matricula) {
+		this.matricula = matricula;
 	}
 	
 	public String getNome() {

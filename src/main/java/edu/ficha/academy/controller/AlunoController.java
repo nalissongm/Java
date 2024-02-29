@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ficha.academy.model.AlunoModel;
-import edu.ficha.academy.service.AlunoService;
+import edu.ficha.academy.repository.AlunoRepository;
 
 
 
@@ -21,23 +21,32 @@ import edu.ficha.academy.service.AlunoService;
 public class AlunoController {
 	
 	@Autowired
-	AlunoService alunoService;
+	public AlunoRepository aluno;
 	
-	
-	@PostMapping("/salvar")
-	public void salvarAluno(@RequestBody AlunoModel aluno) {
-		alunoService.salvarAluno(aluno);
+	@PostMapping("/cadastrar")
+	public void salvarAlunos(@RequestBody List<AlunoModel> alunos) {
+		aluno.saveAll(alunos);
 	}
 	
-	@GetMapping("/{nome}")
-	public AlunoModel retornarAluno(@PathVariable("nome") String nome) {
-		return alunoService.retornarAlunoPeloNome(nome);
+	@GetMapping("/nome/{nome}")
+	public String retornarPorNome(@PathVariable("nome") String nome) {
+		AlunoModel al = new AlunoModel();
+		al = aluno.findByNome(nome);
+		return "Nome: " + al.getNome() +  " | " + "Objetivo: " + al.getObjetivo() + " | " +
+				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
+				
 	}
-
-	@GetMapping("/lista")
-	public List<AlunoModel> retornarAlunos(){
-		return alunoService.retornarListaAlunos();
-		
+	
+	@GetMapping("/matricula/{matricula}")
+	public String retornarPorid(@PathVariable("matricula") int matricula) {
+		AlunoModel al = new AlunoModel();
+		al = aluno.findByMatricula(matricula);
+		return "Nome: " + al.getNome() +  " | " + "Objetivo: " + al.getObjetivo() + " | " +
+				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
 	}
+	
+	
+	
+	
 	
 }
