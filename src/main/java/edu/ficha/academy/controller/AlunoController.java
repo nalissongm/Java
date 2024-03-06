@@ -4,6 +4,7 @@ package edu.ficha.academy.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.ficha.academy.model.AlunoModel;
 import edu.ficha.academy.repository.AlunoRepository;
+import jakarta.transaction.Transactional;
 
 
 
@@ -27,6 +29,11 @@ public class AlunoController {
 	@PostMapping("/cadastrar")
 	public void salvarAlunos(@RequestBody List<AlunoModel> alunos) {
 		aluno.saveAll(alunos);
+	}
+	
+	@GetMapping("/lista")
+	public List<AlunoModel> listaAlunos(){
+		return aluno.findAll();
 	}
 	
 	@GetMapping("/nome/{nome}")
@@ -46,14 +53,16 @@ public class AlunoController {
 				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
 	}
 	
+	@Transactional
 	@PutMapping("/atualizar/objetivo/{objetivo}/{nome}")
 	public void atualizarObjetivo(@PathVariable("objetivo") String objetivo,@PathVariable("nome") String nome) {
 		aluno.atualizarObjetivo(objetivo, nome);
 	}
 	
-	@PutMapping("/atualizar/nome/{novoNome}/{nome}")
-	public void atualizarNome(@PathVariable("novoNome") String novoNome,@PathVariable("nome") String nome) {
-		aluno.atualizarNome(novoNome, nome);
+	@Transactional
+	@DeleteMapping("/deletar/{nome}")
+	public void deletar(@PathVariable("nome") String nome) {
+		aluno.deletarAluno(nome);
 	}
 	
 	
