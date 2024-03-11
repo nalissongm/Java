@@ -17,15 +17,16 @@ import edu.ficha.academy.model.AlunoModel;
 import edu.ficha.academy.repository.AlunoRepository;
 import jakarta.transaction.Transactional;
 
-
-
 @RestController
 @RequestMapping("/aluno")
 public class AlunoController {
 	
-	@Autowired
-	public AlunoRepository aluno;
-	
+	public final AlunoRepository aluno;
+
+	public AlunoController(AlunoRepository aluno) {
+		this.aluno = aluno;
+	}
+
 	@PostMapping("/cadastrar")
 	public void salvarAlunos(@RequestBody AlunoModel al) {
 		aluno.save(al);

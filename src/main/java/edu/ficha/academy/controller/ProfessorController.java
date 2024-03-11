@@ -19,9 +19,13 @@ import jakarta.transaction.Transactional;
 @RequestMapping("/professor")
 public class ProfessorController {
 	
-	@Autowired
+	final
 	ProfessorRepository professor;
-	
+
+	public ProfessorController(ProfessorRepository professor) {
+		this.professor = professor;
+	}
+
 	@PostMapping("/cadastrar")
 	
 	public void cadastrarProfessores(@RequestBody ProfessorModel prof) {

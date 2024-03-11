@@ -9,18 +9,29 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "aluno")
+@Table(name = "Aluno")
 public class AlunoModel {
 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "matricula")
+	@Column(name = "matricula_aluno")
 	private Integer matricula;
 	
 	@Column(name = "curso")
 	private String curso;
-	
+
+	public String getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	@Column(name = "objetivo")
+	private String objetivo;
+
 	@Column(name = "instituicao")
 	private String instituicao;
 	
@@ -39,7 +50,10 @@ public class AlunoModel {
 	
 	@Column(name = "matricula_professor_fk")
 	private int matriculaProfessorFk;
-	
+
+	public AlunoModel() {
+	}
+
 
 	public Integer getMatricula() {
 		return matricula;

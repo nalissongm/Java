@@ -7,10 +7,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "professor")
+@Table(name = "Professor")
 public class ProfessorModel {
 	@Id
-	@Column(name = "matricula")
+	@Column(name = "matricula_professor")
 	private int matricula;
 	
 	@Column(name = "nome")

@@ -35,19 +35,18 @@
 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
-		    <version>3.3.2</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>desafio.web.dio</groupId>
-			<artifactId>web.api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>gym</groupId>
-			<artifactId>ficha</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>desafio.web.dio</groupId>-->
+<!--			<artifactId>web.api</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>gym</groupId>-->
+<!--			<artifactId>ficha</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
