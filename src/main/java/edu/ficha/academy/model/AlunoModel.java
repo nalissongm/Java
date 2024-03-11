@@ -1,9 +1,6 @@
 package edu.ficha.academy.model;
 
 
-
-import org.springframework.stereotype.Component;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,64 +9,104 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Aluno")
-@Component
+@Table(name = "aluno")
 public class AlunoModel {
 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "matricula")
 	private Integer matricula;
-	@Column
+	
+	@Column(name = "curso")
+	private String curso;
+	
+	@Column(name = "instituicao")
+	private String instituicao;
+	
+	@Column(name = "nome")
 	private String nome;
-	@Column
-	private String email;
-	@Column
-	private double altura;
-	@Column
+	
+	@Column(name = "idade")
+	private int idade;
+
+	@Column(name = "peso")
 	private double peso;
-	@Column
-	private String objetivo;
+	
+	@Column(name = "altura")
+	private double altura;
 	
 	
+	@Column(name = "matricula_professor_fk")
+	private int matriculaProfessorFk;
 	
+
 	public Integer getMatricula() {
 		return matricula;
 	}
-	public void setId(Integer matricula) {
+
+	public void setMatricula(Integer matricula) {
 		this.matricula = matricula;
 	}
-	
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	public String getInstituicao() {
+		return instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
+	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getEmail() {
-		return email;
+
+	public int getIdade() {
+		return idade;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
-	public double getAltura() {
-		return altura;
-	}
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
+
 	public double getPeso() {
 		return peso;
 	}
+
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public String getObjetivo() {
-		return objetivo;
+
+	public double getAltura() {
+		return altura;
 	}
-	public void setObjetivo(String objetivo) {
-		this.objetivo = objetivo;
+
+	public void setAltura(double altura) {
+		this.altura = altura;
 	}
+	
+	public double getMatriculaProfessorFk() {
+		return matriculaProfessorFk;
+	}
+	
+	public void setMatriculaProfessorFk(int matriculaProfessorFk) {
+		this.matriculaProfessorFk = matriculaProfessorFk;
+	}
+
+	
+	
 	
 	
 	

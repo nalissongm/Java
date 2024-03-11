@@ -27,8 +27,8 @@ public class AlunoController {
 	public AlunoRepository aluno;
 	
 	@PostMapping("/cadastrar")
-	public void salvarAlunos(@RequestBody List<AlunoModel> alunos) {
-		aluno.saveAll(alunos);
+	public void salvarAlunos(@RequestBody AlunoModel al) {
+		aluno.save(al);
 	}
 	
 	@GetMapping("/lista")
@@ -40,7 +40,7 @@ public class AlunoController {
 	public String retornarPorNome(@PathVariable("nome") String nome) {
 		AlunoModel al = new AlunoModel();
 		al = aluno.findByNome(nome);
-		return "Nome: " + al.getNome() +  " | " + "Objetivo: " + al.getObjetivo() + " | " +
+		return "Nome: " + al.getNome() +   " | " +
 				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
 				
 	}
@@ -49,7 +49,7 @@ public class AlunoController {
 	public String retornarPorid(@PathVariable("matricula") int matricula) {
 		AlunoModel al = new AlunoModel();
 		al = aluno.findByMatricula(matricula);
-		return "Nome: " + al.getNome() +  " | " + "Objetivo: " + al.getObjetivo() + " | " +
+		return "Nome: " + al.getNome() +  " | " + " | " +
 				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
 	}
 	
@@ -65,7 +65,7 @@ public class AlunoController {
 		aluno.deletarAluno(nome);
 	}
 	
-	
+	 
 	
 	
 	
